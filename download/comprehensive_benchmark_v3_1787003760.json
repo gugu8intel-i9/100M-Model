@@ -1,0 +1,214 @@
+{
+  "benchmark_version": "v3.0",
+  "timestamp": "2026-08-17 21:56:00",
+  "hardware": {
+    "device": "cuda",
+    "gpu": "NVIDIA A10",
+    "vram_gb": 23.684841472
+  },
+  "config": {
+    "model": {
+      "layers": 6,
+      "hidden_dim": 384,
+      "heads": 6,
+      "vocab_size": 8192,
+      "seq_len": 256
+    },
+    "training": {
+      "batch_size": 32,
+      "epochs": 3,
+      "warmup_steps": 50,
+      "trials_per_optimizer": 15
+    },
+    "search_space": {
+      "lr_range": [
+        1e-06,
+        0.01
+      ],
+      "wd_range": [
+        0.0,
+        0.5
+      ]
+    }
+  },
+  "total_time_seconds": 6.3204474449157715,
+  "results": {
+    "adamw": {
+      "display_name": "AdamW",
+      "description": "Baseline - Industry Standard",
+      "best_trial": {
+        "loss": Infinity,
+        "lr": "N/A",
+        "weight_decay": "N/A",
+        "trial_number": -1
+      },
+      "all_results": [],
+      "n_completed_trials": 0,
+      "optuna_stats": {
+        "n_trials": 1,
+        "pruned": 0,
+        "failed": 1
+      }
+    },
+    "lion": {
+      "display_name": "Lion",
+      "description": "Sign-based Momentum (Google 2023)",
+      "best_trial": {
+        "loss": Infinity,
+        "lr": "N/A",
+        "weight_decay": "N/A",
+        "trial_number": -1
+      },
+      "all_results": [],
+      "n_completed_trials": 0,
+      "optuna_stats": {
+        "n_trials": 1,
+        "pruned": 0,
+        "failed": 1
+      }
+    },
+    "sophia": {
+      "display_name": "Sophia",
+      "description": "Second-order Clipped (2024)",
+      "best_trial": {
+        "loss": Infinity,
+        "lr": "N/A",
+        "weight_decay": "N/A",
+        "trial_number": -1
+      },
+      "all_results": [],
+      "n_completed_trials": 0,
+      "optuna_stats": {
+        "n_trials": 1,
+        "pruned": 0,
+        "failed": 1
+      }
+    },
+    "adafactor": {
+      "display_name": "Adafactor",
+      "description": "Memory-Efficient (Google)",
+      "best_trial": {
+        "loss": Infinity,
+        "lr": "N/A",
+        "weight_decay": "N/A",
+        "trial_number": -1
+      },
+      "all_results": [],
+      "n_completed_trials": 0,
+      "optuna_stats": {
+        "n_trials": 1,
+        "pruned": 0,
+        "failed": 1
+      }
+    },
+    "adan": {
+      "display_name": "Adan",
+      "description": "Adaptive Nesterov (2022)",
+      "best_trial": {
+        "loss": Infinity,
+        "lr": "N/A",
+        "weight_decay": "N/A",
+        "trial_number": -1
+      },
+      "all_results": [],
+      "n_completed_trials": 0,
+      "optuna_stats": {
+        "n_trials": 1,
+        "pruned": 0,
+        "failed": 1
+      }
+    },
+    "radam": {
+      "display_name": "RAdam",
+      "description": "Rectified Adam (2020)",
+      "best_trial": {
+        "loss": Infinity,
+        "lr": "N/A",
+        "weight_decay": "N/A",
+        "trial_number": -1
+      },
+      "all_results": [],
+      "n_completed_trials": 0,
+      "optuna_stats": {
+        "n_trials": 1,
+        "pruned": 0,
+        "failed": 1
+      }
+    },
+    "muon": {
+      "display_name": "Muon",
+      "description": "NEW: 2x Faster SOTA (Dec 2024)!",
+      "best_trial": {
+        "loss": Infinity,
+        "lr": "N/A",
+        "weight_decay": "N/A",
+        "trial_number": -1
+      },
+      "all_results": [],
+      "n_completed_trials": 0,
+      "optuna_stats": {
+        "n_trials": 1,
+        "pruned": 0,
+        "failed": 1
+      }
+    },
+    "prodigy": {
+      "display_name": "Prodigy",
+      "description": "NEW: Parameter-Free (2024)",
+      "best_trial": {
+        "loss": Infinity,
+        "lr": "N/A",
+        "weight_decay": "N/A",
+        "trial_number": -1
+      },
+      "all_results": [],
+      "n_completed_trials": 0,
+      "optuna_stats": {
+        "n_trials": 1,
+        "pruned": 0,
+        "failed": 1
+      }
+    },
+    "sf_adamw": {
+      "display_name": "SF-AdamW",
+      "description": "NEW: Schedule-Free (2024)",
+      "best_trial": {
+        "loss": Infinity,
+        "lr": "N/A",
+        "weight_decay": "N/A",
+        "trial_number": -1
+      },
+      "all_results": [],
+      "n_completed_trials": 0,
+      "optuna_stats": {
+        "n_trials": 1,
+        "pruned": 0,
+        "failed": 1
+      }
+    },
+    "d_adam": {
+      "display_name": "D-Adam",
+      "description": "NEW: LR-Free (Meta AI)",
+      "best_trial": {
+        "loss": Infinity,
+        "lr": "N/A",
+        "weight_decay": "N/A",
+        "trial_number": -1
+      },
+      "all_results": [],
+      "n_completed_trials": 0,
+      "optuna_stats": {
+        "n_trials": 1,
+        "pruned": 0,
+        "failed": 1
+      }
+    }
+  },
+  "ranking": [],
+  "summary": {
+    "total_optimizers_tested": 10,
+    "successful_optimizers": 0,
+    "total_trials_run": 10,
+    "total_pruned": 0
+  }
+}

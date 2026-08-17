@@ -1,0 +1,74 @@
+[
+  {
+    "url": "https://arxiv.org/html/2602.11171v2",
+    "name": "A Language-Guided Bayesian Optimization for Efficient",
+    "snippet": "May 28, 2026 — We propose a framework that combines a Large Language Model (LLM) with Bayesian Optimization (BO) to discover appropriate hyperparameters for ... Read more",
+    "host_name": "arxiv.org",
+    "rank": 0,
+    "date": "May 28, 2026",
+    "favicon": ""
+  },
+  {
+    "url": "https://iclr.cc/virtual/2024/poster/18743",
+    "name": "Large Language Models to Enhance Bayesian Optimization",
+    "snippet": "More specifically, we explore how combining contextual understanding, few-shot learning proficiency, and domain knowledge of LLMs can improve model -based BO. Read more",
+    "host_name": "iclr.cc",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.emergentmind.com/topics/llm-guided-bayesian-optimization",
+    "name": "LLM-Guided Bayesian Optimization",
+    "snippet": "Sep 7, 2025 — LLM-guided Bayesian Optimization is a framework that integrates large language models into Bayesian optimization, enhancing initialization, ... Read more",
+    "host_name": "www.emergentmind.com",
+    "rank": 2,
+    "date": "Sep 7, 2025",
+    "favicon": ""
+  },
+  {
+    "url": "https://openreview.net/forum?id=OOxotBmGol",
+    "name": "Large Language Models to Enhance Bayesian Optimization",
+    "snippet": "by T Liu · Cited by 251 — Surrogate modeling , where the LLM is used to provide prediction and uncertainty estimates for a new design provided past observations. For ... Read more",
+    "host_name": "openreview.net",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/34d3cf97696022b179171e5abda42c0b-Paper-Conference.pdf",
+    "name": "Model Fusion through Bayesian Optimization in Language",
+    "snippet": "by C Jang · 2024 · Cited by 9 — A study of Bayesian neural network surrogates for Bayesian optimization . Tuning large neural networks via zero-shot hyperparameter transfer.",
+    "host_name": "proceedings.neurips.cc",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.semanticscholar.org/paper/Large-Language-Models-to-Enhance-Bayesian-Liu-Astorga/3d3f0d7eb69f063e9539dd45df971f007b094734",
+    "name": "Large Language Models to Enhance Bayesian Optimization",
+    "snippet": "Bayesian Optimization for Efficient LoRA Hyperparameter . This work proposes the use of Large Language Models … tuning can be improved by up to 2.7%. single- ...",
+    "host_name": "www.semanticscholar.org",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/tennisonliu/LLAMBO",
+    "name": "LLAMBO: Large Language Models to Enhance Bayesian",
+    "snippet": "Our findings illustrate that LLAMBO is effective at zero-shot warmstarting, and improves surrogate modeling and candidate sampling, especially in the early ... Read more",
+    "host_name": "github.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://medium.com/@punya8147_26846/unlocking-the-power-of-bayesian-optimization-for-hyperparameter-tuning-0d3c568100d4",
+    "name": "Unlocking the Power of Bayesian Optimization for",
+    "snippet": "Bayesian Optimization is an advanced method for hyperparameter tuning that builds a statistical model to guide its search for optimal values. Read more",
+    "host_name": "medium.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  }
+]

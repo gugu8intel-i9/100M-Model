@@ -1,0 +1,83 @@
+[
+  {
+    "url": "https://arxiv.org/abs/1612.01064",
+    "name": "[1612.01064] Trained Ternary Quantization",
+    "snippet": "by C Zhu · 2016 · Cited by 1533 — Ternary Quantization (TTQ), a method that can reduce the precision of weights in neural networks to ternary values.",
+    "host_name": "arxiv.org",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.emergentmind.com/topics/ternary-quantization",
+    "name": "Ternary Quantization in Neural Networks",
+    "snippet": "Jan 7, 2026 — Ternary quantization refers to the process of mapping real-valued parameters (typically neural network weights or activations) to a discrete set ... Read more",
+    "host_name": "www.emergentmind.com",
+    "rank": 1,
+    "date": "Jan 7, 2026",
+    "favicon": ""
+  },
+  {
+    "url": "https://ojs.aaai.org/index.php/AAAI/article/view/17036",
+    "name": "TRQ: Ternary Neural Networks With Residual Quantization",
+    "snippet": "by Y Li · 2021 · Cited by 50 — In this paper, we introduce a stem-residual framework which provides new insight into Ternary quantization , termed Residual Quantization (TRQ), ... Read more",
+    "host_name": "ojs.aaai.org",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://openreview.net/forum?id=SyxhaxBKPS",
+    "name": "Smart Ternary Quantization",
+    "snippet": "by G Morin · Cited by 4 — Ternary quantization provides a more flexible model and often beats binary quantization in terms of accuracy, but doubles memory and increases ...",
+    "host_name": "openreview.net",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.semanticscholar.org/paper/Trained-Ternary-Quantization-Zhu-Han/d418295cd3027c43eccc5592ae5b8303ba8192be",
+    "name": "[PDF] Trained Ternary Quantization",
+    "snippet": "This paper proposes a weight compression method for deep neural networks by combining pruning and quantization , which allows multiplication-free DNN ... Read more",
+    "host_name": "www.semanticscholar.org",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.ijcai.org/proceedings/2020/0318.pdf",
+    "name": "Soft Threshold Ternary Networks",
+    "snippet": "by W Xu · Cited by 12 — This discovery indicates that both weights and activations in neural networks can be quantized to low-bit formats. In this way, both storage and computation ... Read more 7 pages",
+    "host_name": "www.ijcai.org",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/TropComplique/trained-ternary-quantization",
+    "name": "TropComplique/trained-ternary-quantization",
+    "snippet": "Ternary Quantization , a way of replacing full precision weights of a neural network by ternary values. I tested it on Tiny ImageNet dataset.",
+    "host_name": "github.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://mlechner.substack.com/p/quantized-neural-networks-the-only",
+    "name": "Quantized Neural Networks: The Only Guide You Need",
+    "snippet": "A method reporting great accuracy with weight -only quantization tells you nothing about one that also quantizes activations.",
+    "host_name": "mlechner.substack.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://scholar.undip.ac.id/en/publications/robust-ternary-quantization-for-lightweight-image-denoising",
+    "name": "Robust ternary quantization for lightweight image denoising",
+    "snippet": "by KA Nugroho · 2025 — This paper introduces a novel approach to ternary quantization aimed at improving the efficiency and effectiveness of deep learning models for image denoising. Read more",
+    "host_name": "scholar.undip.ac.id",
+    "rank": 8,
+    "date": "",
+    "favicon": ""
+  }
+]

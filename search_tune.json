@@ -1,0 +1,74 @@
+[
+  {
+    "url": "https://docs.ray.io/en/latest/tune/examples/ax_example.html",
+    "name": "Running Tune experiments with AxSearch - Ray Docs",
+    "snippet": "Jul 22, 2022 — In this tutorial we introduce Ax , while running a simple Ray Tune experiment. Tune's Search Algorithms integrate with Ax and, as a result, ...",
+    "host_name": "docs.ray.io",
+    "rank": 0,
+    "date": "Jul 22, 2022",
+    "favicon": ""
+  },
+  {
+    "url": "https://docs.ray.io/en/latest/tune/index.html",
+    "name": "Ray Tune: Hyperparameter Tuning — Ray 2.57.0 - Ray Docs",
+    "snippet": "Hyperparameter tuning and experiment execution at any scale, with algorithms like PBT and ASHA and integrations for PyTorch, XGBoost, and Optuna.",
+    "host_name": "docs.ray.io",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://medium.com/riselab/cutting-edge-hyperparameter-tuning-with-ray-tune-be6c0447afdf",
+    "name": "Cutting edge hyperparameter tuning with Ray Tune",
+    "snippet": "Ray Tune is a Python library that accelerates hyperparameter tuning by allowing you to leverage cutting edge optimization algorithms at scale. Read more",
+    "host_name": "medium.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://docs.ray.io/en/latest/tune/api/suggestion.html",
+    "name": "Tune Search Algorithms (tune.search) — Ray 2.56.0 - Ray Docs",
+    "snippet": "Ax to optimize hyperparameters . is an algorithm that both terminates bad trials and also uses Bayesian Optimization to improve the hyperparameter search. It is ...",
+    "host_name": "docs.ray.io",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.anyscale.com/product/library/ray-tune",
+    "name": "Ray Tune",
+    "snippet": "Ray Tune makes it easy to speed up hyperparameter searches by scaling out a Ray cluster. Speed up a single trial by running it across compute instances, or run ... Read more",
+    "host_name": "www.anyscale.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "http://bair.berkeley.edu/blog/2020/01/16/tune",
+    "name": "Large Scale Training at BAIR with Ray Tune",
+    "snippet": "Jan 16, 2020 — Ray Tune: a fault-tolerant framework for training and hyperparameter tuning . Automatically checkpoints and resumes training jobs in case of ...",
+    "host_name": "bair.berkeley.edu",
+    "rank": 5,
+    "date": "Jan 16, 2020",
+    "favicon": ""
+  },
+  {
+    "url": "https://developers.redhat.com/blog/2024/08/16/hyperparameter-optimisation-ray-tune",
+    "name": "Hyperparameter Optimisation with Ray Tune",
+    "snippet": "Aug 16, 2024 — In this blog we look at how we use OpenShift AI with Ray Tune to perform hyperparameter optimization as well as integrating the Model ...",
+    "host_name": "developers.redhat.com",
+    "rank": 6,
+    "date": "Aug 16, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://docs.ray.io/en/latest/tune/api/doc/ray.tune.search.ax.AxSearch.html",
+    "name": "ray.tune.search.ax.AxSearch — Ray 2.56.0 - Ray Docs",
+    "snippet": "Uses Ax to optimize hyperparameters . Ax is a platform for understanding, managing, deploying, and automating adaptive experiments. Ax provides an easy to use ... Read more",
+    "host_name": "docs.ray.io",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  }
+]

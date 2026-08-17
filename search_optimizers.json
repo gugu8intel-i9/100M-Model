@@ -1,0 +1,74 @@
+[
+  {
+    "url": "https://arxiv.org/html/2507.08472v2",
+    "name": "Pre-Training LLMs on a budget: A comparison of three",
+    "snippet": "Jul 22, 2025 — Sophia exhibited the lowest training and validation loss , Lion was fastest in terms of training GPU hours but AdamW led to the best downstream ...",
+    "host_name": "arxiv.org",
+    "rank": 0,
+    "date": "Jul 22, 2025",
+    "favicon": ""
+  },
+  {
+    "url": "https://medium.com/@anshm18111996/comprehensive-overview-optimizers-in-machine-learning-and-ai-57a2b0fbcc79",
+    "name": "Optimizers in Machine Learning and AI: A Comprehensive",
+    "snippet": "Sophia was shown to achieve roughly 2× speed-up in convergence for training transformer language models compared to AdamW [31].",
+    "host_name": "medium.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://arxiv.org/html/2407.07972v1",
+    "name": "Deconstructing What Makes a Good Optimizer for",
+    "snippet": "Jul 10, 2024 — Adafactor and Lion are competitive with Adam , while SGD is worse both in terms of performance and stability to learning rate.",
+    "host_name": "arxiv.org",
+    "rank": 2,
+    "date": "Jul 10, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://pub.towardsai.net/the-6-optimization-algorithms-how-ai-learns-to-learn-10-faster-with-50-less-memory-1709c9168d3a",
+    "name": "The 6 Optimization Algorithms: How AI Learns to Learn 10×",
+    "snippet": "Feb 17, 2026 — Understanding SGD, Adam , AdamW , LAMB, Adafactor , and Lion . Introduction. You're training a language model with 175 billion parameters.",
+    "host_name": "pub.towardsai.net",
+    "rank": 3,
+    "date": "Feb 17, 2026",
+    "favicon": ""
+  },
+  {
+    "url": "http://kempnerinstitute.harvard.edu/research/deeper-learning/anything-but-sgd-evaluating-optimizers-for-llm-training",
+    "name": "Anything but SGD: Evaluating Optimizers for LLM Training",
+    "snippet": "Jul 12, 2024 — Lion and Adafactor have significantly reduced memory requirements as compared to Adam, and thus are preferable from an efficiency viewpoint.",
+    "host_name": "kempnerinstitute.harvard.edu",
+    "rank": 4,
+    "date": "Jul 12, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://neurips.cc/virtual/2024/101882",
+    "name": "NeurIPS Deconstructing What Makes a Good Optimizer for",
+    "snippet": "We aim to compare several optimization algorithms , including SGD, Adafactor, Adam, Lion, and Sophia in the context of autoregressive language modeling",
+    "host_name": "neurips.cc",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1138jpp/d_lion_an_optimizer_that_outperforms_adam",
+    "name": "[D] Lion , An Optimizer That Outperforms Adam - Symbolic",
+    "snippet": "We compare Lion with widely used optimizers , such as Adam and Adafactor , for training a variety of models on different tasks.",
+    "host_name": "www.reddit.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://eu.36kr.com/en/p/3456206492571014",
+    "name": "Stanford: AdamW Wins with \"Stability\" in the Battle Among",
+    "snippet": "Sep 7, 2025 — AdamW remains a robust choice for pre-training , but matrix-based methods demonstrate significant advantages under specific data-to-model ratios.",
+    "host_name": "eu.36kr.com",
+    "rank": 7,
+    "date": "Sep 7, 2025",
+    "favicon": ""
+  }
+]

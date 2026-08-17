@@ -1,0 +1,83 @@
+[
+  {
+    "url": "https://www.sciencedirect.com/science/article/abs/pii/S089360802500735X",
+    "name": "PT-BitNet: Scaling up the 1-Bit large language model with",
+    "snippet": "by Y Guo · 2025 · Cited by 12 — PT-BitNet, a novel post-training quantization method. BitNet's ternary quantization to large-scale language models up to 70B parameters.",
+    "host_name": "www.sciencedirect.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/1.58-bit_large_language_model",
+    "name": "1.58-bit large language model",
+    "snippet": "1.58-bit large language model (also known as a ternary LLM) is a type of large language model (LLM) designed to be computationally efficient.",
+    "host_name": "en.wikipedia.org",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://openreview.net/forum?id=TJo6aQb7mK",
+    "name": "Surprising Effectiveness of pretraining Ternary Language",
+    "snippet": "by A Kaushal · Cited by 7 — Ternary Language Models (TriLMs) outperform traditional and quantized models in efficiency and scaling, especially beyond one billion parameters.",
+    "host_name": "openreview.net",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://arxiv.org/abs/2402.17764",
+    "name": "The Era of 1-bit LLMs: All Large Language Models are in",
+    "snippet": "by S Ma · 2024 · Cited by 556 — 1.58-bit LLM defines a new scaling law and recipe for training new generations of LLMs that are both high-performance and cost-effective.",
+    "host_name": "arxiv.org",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://huggingface.co/papers/2402.17764",
+    "name": "The Era of 1-bit LLMs: All Large Language Models are in",
+    "snippet": "In this work, we introduce a 1-bit LLM variant, namely BitNet b1.58, in which every single parameter (or weight) of the LLM is ternary {-1, 0, 1} ...",
+    "host_name": "huggingface.co",
+    "rank": 4,
+    "date": "Feb 27, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1b21bbx/this_is_pretty_revolutionary_for_the_local_llm",
+    "name": "This is pretty revolutionary for the local LLM scene!",
+    "snippet": "New paper just dropped. 1.58bit (ternary parameters 1,0,-1) LLMs, showing performance and perplexity equivalent to full fp16 models of same ...",
+    "host_name": "www.reddit.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://arxiv.org/pdf/2602.07374",
+    "name": "TernaryLM: Memory-Efficient Language Modeling via",
+    "snippet": "TernaryLM learns quantization-aware representations from scratch using straight- through estimators and adaptive per-layer scaling factors.",
+    "host_name": "arxiv.org",
+    "rank": 6,
+    "date": "by N Nargund · 2026",
+    "favicon": ""
+  },
+  {
+    "url": "https://news.ycombinator.com/item?id=39535800",
+    "name": "The Era of 1-bit LLMs: ternary parameters for cost-effective",
+    "snippet": "Quantization does reduce quality of the outputs. But the point is that you save enough memory doing so that you can cram a larger model into the ...",
+    "host_name": "news.ycombinator.com",
+    "rank": 7,
+    "date": "Feb 28, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/microsoft/bitnet",
+    "name": "microsoft/BitNet: Official inference framework for 1-bit LLMs",
+    "snippet": "It is a ternary (1.58-bit) language model that delivers competitive performance with full-precision models of similar size while enabling significantly faster ...",
+    "host_name": "github.com",
+    "rank": 8,
+    "date": "",
+    "favicon": ""
+  }
+]

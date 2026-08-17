@@ -1,0 +1,22 @@
+{
+  "learning_rate": 0.0009201093214095502,
+  "optimizer_type": "adamw",
+  "weight_decay": 0.0702735682990974,
+  "warmup_ratio": 0.0600050657380417,
+  "lr_min_ratio": 0.1384463664353524,
+  "batch_size": 128,
+  "num_layers": 9,
+  "hidden_dim": 768,
+  "num_heads": 12,
+  "mlp_ratio": 4,
+  "dropout": 0.009719658028892625,
+  "activation": "swiglu",
+  "_metadata": {
+    "best_value": 3.320994776139662,
+    "estimated_params": 112852992,
+    "total_trials": 25,
+    "completed_trials": 19,
+    "pruned_trials": 6,
+    "note": "Fast demo mode with simulated training. Use full version for real training."
+  }
+}

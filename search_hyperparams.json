@@ -1,0 +1,92 @@
+[
+  {
+    "url": "https://deepchecks.com/hyperparameter-optimization-llms-best-practices-advanced-techniques",
+    "name": "Hyperparameter Optimization For LLMs: Practices & Techniques",
+    "snippet": "Jul 18, 2025 · Optimize LLM performance with key hyperparameter tuning techniques, tools, and practices for better training and accuracy.",
+    "host_name": "deepchecks.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.alphaxiv.org/abs/2406.11706v1",
+    "name": "Prompts as Auto-Optimized Training Hyperparameters - alphaXiv",
+    "snippet": "We develop a method for training small-scale (under 100M parameter) neural information retrieval models with as few as 10 gold relevance labels.",
+    "host_name": "www.alphaxiv.org",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1dusk4x/100m_params_language_models_anyone",
+    "name": "100M params language models anyone? : r/LocalLLaMA - Reddit",
+    "snippet": "Jul 4, 2024 · Is there any attempts to pre-train radically small language models on tons of text then fine-tuning them for super domain-constrained tasks? What're your typical hyper-parameters for fine tuning? - Reddit [D] Which LLM advancements also work for sub 100M parameter ... More results from www.reddit.com",
+    "host_name": "www.reddit.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://arxiv.org/html/2509.15561v1",
+    "name": "Small LLMs with Expert Blocks Are Good Enough for Hyperparamter",
+    "snippet": "Sep 19, 2025 · Hyperparameters are configuration settings defined before training a machine learning model that control its learning process and performance. ...",
+    "host_name": "arxiv.org",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://latitude.so/blog/fine-tuning-llms-hyperparameter-best-practices",
+    "name": "Fine-Tuning LLMs: Hyperparameter Best Practices - Latitude.so",
+    "snippet": "Feb 2, 2026 · When fine-tuning a model, three hyperparameters stand out as the most influential: learning rate , batch size , and number of epochs. These ...",
+    "host_name": "latitude.so",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://medium.com/@sahin.samia/parameter-efficient-fine-tuning-the-evolution-of-llm-adaptation-63b01d544483",
+    "name": "Parameter-Efficient Fine-Tuning: The Evolution of LLM Adaptation",
+    "snippet": "May 17, 2025 · Implementing parameter-efficient fine-tuning effectively requires making informed decisions about hyperparameters, target modules, and general ...",
+    "host_name": "medium.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.researchgate.net/post/What_are_the_best_practices_for_fine-tuning_pre-trained_generative_AI_models_for_specific_tasks",
+    "name": "What are the best practices for fine-tuning pre-trained generative AI",
+    "snippet": "Sep 5, 2023 · Use a GPU to speed up the training process. · Experiment with different hyperparameters. The hyperparameters are the settings of the model, such ...",
+    "host_name": "www.researchgate.net",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://training-docs.cerebras.ai/rel-2.5.0/model-zoo/tutorials/training-an-llm-using-maximal-update-parameterization/overview",
+    "name": "Train LLMs with μP - Cerebras Training",
+    "snippet": "Best Practices. When picking the best configuration of the μP hyperparameters from your hyperparameter sweep, it is recommended to pick top-10 configurations ...",
+    "host_name": "training-docs.cerebras.ai",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.heavybit.com/library/article/llm-fine-tuning",
+    "name": "LLM Fine-Tuning: A Guide for Engineering Teams in 2025 | Heavybit",
+    "snippet": "Jun 18, 2025 · What every startup team should know before fine-tuning an LLM—costs, risks, tools, and how to do it right.",
+    "host_name": "www.heavybit.com",
+    "rank": 8,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://apxml.com/courses/fine-tuning-adapting-large-language-models/chapter-3-full-parameter-fine-tuning",
+    "name": "Chapter 3: Full Parameter Fine-tuning - ApX Machine Learning",
+    "snippet": "Strategies for selecting appropriate hyperparameters, such as learning rates ( η \\eta η) and batch sizes. Techniques like regularization to prevent overfitting ...",
+    "host_name": "apxml.com",
+    "rank": 9,
+    "date": "",
+    "favicon": ""
+  }
+]

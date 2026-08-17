@@ -1,0 +1,112 @@
+{
+  "benchmark_config": {
+    "model_params": {
+      "layers": 6,
+      "hidden_dim": 384,
+      "heads": 6,
+      "vocab_size": 8192,
+      "seq_len": 256
+    },
+    "training": {
+      "learning_rate": 0.000175,
+      "weight_decay": 0.149,
+      "batch_size": 32,
+      "epochs": 3,
+      "warmup_steps": 50
+    },
+    "hardware": {
+      "device": "cuda",
+      "gpu": "NVIDIA A10"
+    },
+    "timestamp": "2026-08-17 21:47:44",
+    "total_time_seconds": 22.298882246017456
+  },
+  "results": {
+    "adamw": {
+      "optimizer": "adamw",
+      "final_loss": 8.451342248916626,
+      "best_loss": 8.451342248916626,
+      "loss_history": [
+        9.085193014144897,
+        8.763804388046264,
+        8.451342248916626
+      ],
+      "time_seconds": 3.334331512451172,
+      "final_lr": 1.7500000000000002e-05,
+      "converged": false
+    },
+    "lion": {
+      "optimizer": "lion",
+      "final_loss": 8.529013395309448,
+      "best_loss": 8.529013395309448,
+      "loss_history": [
+        9.093265962600707,
+        8.76814670562744,
+        8.529013395309448
+      ],
+      "time_seconds": 2.665699005126953,
+      "final_lr": 1.7500000000000002e-05,
+      "converged": false
+    },
+    "sophia": {
+      "optimizer": "sophia",
+      "final_loss": NaN,
+      "best_loss": Infinity,
+      "loss_history": [
+        NaN,
+        NaN,
+        NaN
+      ],
+      "time_seconds": 2.417111873626709,
+      "final_lr": 1.7500000000000002e-05,
+      "converged": false
+    },
+    "adafactor": {
+      "optimizer": "adafactor",
+      "final_loss": 8.5147940158844,
+      "best_loss": 8.5147940158844,
+      "loss_history": [
+        9.084378862380982,
+        8.836218786239623,
+        8.5147940158844
+      ],
+      "time_seconds": 3.310222864151001,
+      "final_lr": 1.7500000000000002e-05,
+      "converged": false
+    },
+    "adan": {
+      "optimizer": "adan",
+      "final_loss": 8.490355348587036,
+      "best_loss": 8.490355348587036,
+      "loss_history": [
+        9.089062833786011,
+        8.766573858261108,
+        8.490355348587036
+      ],
+      "time_seconds": 3.2404091358184814,
+      "final_lr": 1.7500000000000002e-05,
+      "converged": false
+    },
+    "radam": {
+      "optimizer": "radam",
+      "final_loss": 9.064340543746948,
+      "best_loss": 9.064340543746948,
+      "loss_history": [
+        9.091733598709107,
+        9.086557722091674,
+        9.064340543746948
+      ],
+      "time_seconds": 2.8346872329711914,
+      "final_lr": 1.7500000000000002e-05,
+      "converged": false
+    }
+  },
+  "ranking": [
+    "adamw",
+    "adan",
+    "adafactor",
+    "lion",
+    "radam",
+    "sophia"
+  ]
+}

@@ -1,0 +1,83 @@
+[
+  {
+    "url": "https://pytorch.org/blog/quantization-aware-training",
+    "name": "Quantization-Aware Training for Large Language Models",
+    "snippet": "Jul 30, 2024 — In this blog, we present an end-to-end Quantization-Aware Training (QAT) flow for large language models in PyTorch. We demonstrate how QAT in ...",
+    "host_name": "pytorch.org",
+    "rank": 0,
+    "date": "Jul 30, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://arxiv.org/html/2407.11062v3",
+    "name": "EfficientQAT: Efficient Quantization-Aware Training for",
+    "snippet": "QAT can enhance the performance of quantized models beyond what PTQ offers. However, QAT has been less explored in LLMs due to the significant training costs ...",
+    "host_name": "arxiv.org",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.ibm.com/think/topics/quantization-aware-training",
+    "name": "What is Quantization Aware Training?",
+    "snippet": "Quantization Aware Training (QAT) improves large language model efficiency by simulating low-precision effects during training.",
+    "host_name": "www.ibm.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://aclanthology.org/2024.findings-acl.26.pdf",
+    "name": "LLM-QAT: Data-Free Quantization Aware Training for",
+    "snippet": "by Z Liu · 2024 · Cited by 639 — Several post- training quantization methods have been applied to large language models . (LLMs), and have been shown to perform well. Read more 18 pages",
+    "host_name": "aclanthology.org",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://dl.acm.org/doi/full/10.1145/3776759.3776826",
+    "name": "Survey of Quantization-Aware Training (QAT) Applications",
+    "snippet": "by J Zhang · 2025 · Cited by 12 — In recent years ( 2024 –2025), QAT has been extensively applied in domains such as image recognition, large language models , and diffusion models .",
+    "host_name": "dl.acm.org",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://medium.com/better-ml/quantization-aware-training-qat-vs-post-training-quantization-ptq-cd3244f43d9a",
+    "name": "Quantization Aware Training (QAT) vs. Post",
+    "snippet": "QAT integrates the quantization process into the model training phase . During training, the model simulates quantization on each forward and ...",
+    "host_name": "medium.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/OpenGVLab/EfficientQAT",
+    "name": "[ACL 2025 Main] EfficientQAT: Efficient Quantization-Aware",
+    "snippet": "We explore the Scaling Law for Quantization-Aware Training , which offers insights and instruction for LLMs QAT. has been accepted for ACL 2025 Main Conference!",
+    "host_name": "github.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.researchgate.net/publication/398580536_Quantization-Aware_Training_Techniques_for_Large_Language_Models_on_Low-Cost_GPUs",
+    "name": "Quantization-Aware Training Techniques for Large",
+    "snippet": "This article provides an in-depth review and synthesis of quantization-aware techniques for training and adapting LLMs on low-cost GPUs.",
+    "host_name": "www.researchgate.net",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://openreview.net/forum?id=ktcAF6gQpF",
+    "name": "LLM-QAT: Data-Free Quantization Aware Training for",
+    "snippet": "Feb 16, 2024 — Abstract: Several post- training quantization methods have been applied to large language models (LLMs), and have been shown to perform well ... Read more",
+    "host_name": "openreview.net",
+    "rank": 8,
+    "date": "Feb 16, 2024",
+    "favicon": ""
+  }
+]

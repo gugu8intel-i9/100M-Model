@@ -1,0 +1,83 @@
+[
+  {
+    "url": "https://medium.com/@mjgmario/hyperparameter-optimization-with-optuna-8fca06ea5491",
+    "name": "Hyperparameter Optimization with Optuna",
+    "snippet": "TPE is not a Gaussian-process BO method . it fits a Gaussian process surrogate model. For TPESampler, HyperbandPruner is the best. For deep ...",
+    "host_name": "medium.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://arxiv.org/pdf/2201.06433",
+    "name": "A Comparative study of Hyper-Parameter Optimization Tools",
+    "snippet": "by S Shekhar · 2022 · Cited by 193 — The performance score of HyperOpt and Optuna is similar in all datasets. Comparing the runtime, Optuna is better in most of the datasets … the ...",
+    "host_name": "arxiv.org",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=9CJ6_bunz7I",
+    "name": "The better Hyperparameter Tuning using Bayesian Search",
+    "snippet": "In this video, we dive deep into hyperparameter tuning using Bayesian search from scikit-optimize and the Optuna framework for a classification ...",
+    "host_name": "www.youtube.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://optuna.readthedocs.io/en/stable/reference/samplers/generated/optuna.samplers.TPESampler.html",
+    "name": "optuna.samplers.TPESampler - Read the Docs",
+    "snippet": "On each trial, for each parameter, TPE fits one Gaussian Mixture Model (GMM) l(x) to the set of parameter values associated with the best objective values, and ... Read more",
+    "host_name": "optuna.readthedocs.io",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1lqw0fj/d_hyperparameter_optimization_with_evolutionary",
+    "name": "[D] Hyperparameter Optimization with Evolutionary",
+    "snippet": "Bayesian methods like Optuna are usually more sample-efficient , but Evolutionary Algorithms can perform better with large, irregular search ...",
+    "host_name": "www.reddit.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://towardsdatascience.com/state-of-the-art-machine-learning-hyperparameter-optimization-with-optuna-a315d8564de1",
+    "name": "State-of-the-Art Machine Learning Hyperparameter",
+    "snippet": "Mar 31, 2022 — In this article, we will be discussing Optuna , a hyperparameter optimization software framework, particularly designed for machine learning ... Read more",
+    "host_name": "towardsdatascience.com",
+    "rank": 5,
+    "date": "Mar 31, 2022",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.emergentmind.com/topics/tree-parzen-estimator-tpe",
+    "name": "Tree Parzen Estimator (TPE) for Hyperparameter",
+    "snippet": "Feb 6, 2026 — TPE is a nonparametric sequential model-based optimization method that partitions the search space into promising and unpromising regions ... Read more",
+    "host_name": "www.emergentmind.com",
+    "rank": 6,
+    "date": "Feb 6, 2026",
+    "favicon": ""
+  },
+  {
+    "url": "https://pub.aimind.so/smart-hyperparameter-tuning-25599c14c07e",
+    "name": "Smart Hyperparameter Tuning (TPE)",
+    "snippet": "Sep 1, 2023 — A Gaussian Process (GP) models the relationship between hyperparameters (in this case, learning rates) and the optimization metric (precision) ... Read more",
+    "host_name": "pub.aimind.so",
+    "rank": 7,
+    "date": "Sep 1, 2023",
+    "favicon": ""
+  },
+  {
+    "url": "https://ailab.criteo.com/hyper-parameter-optimization-algorithms-a-short-review",
+    "name": "Hyper-parameter optimization algorithms: a short review",
+    "snippet": "Apr 16, 2019 — This algorithm blends together the hyper-parameter search with the learning , so that it only produces a model at the end, and not a hyper- ... Read more",
+    "host_name": "ailab.criteo.com",
+    "rank": 8,
+    "date": "Apr 16, 2019",
+    "favicon": ""
+  }
+]
