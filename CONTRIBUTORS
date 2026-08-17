@@ -1,0 +1,27 @@
+Contributors
+----------
+
+Kunal
+--------
+Contribution: LLM 100M parameter optimizer benchmark and training scripts
+- Conducted comprehensive optimizer benchmark across 10 optimizers (AdamW, Lion, Sophia, Adafactor, Adan, RAdam, Muon, Prodigy, SF-AdamW, D-Adam)
+- Trained ~100M parameter transformer model with Numba JIT acceleration and QAT support
+- Generated benchmark reports and visualizations for optimizer performance comparison
+- Authored training scripts with Bayesian-optimized hyperparameters (LR=1.75e-4, WD=0.149, AdamW)
+- Implemented custom optimizers: Lion, Sophia, Adan, RAdam, and QAT-aware layers
+- Deployed training on Modal cloud GPU infrastructure (NVIDIA A10G)
+
+Results Summary
+---------------
+Best optimizer: Lion (loss: 8.2268) - sign-based, Google 2023
+Second: AdamW (loss: 8.2643) - baseline, proven reliability
+Third: Adafactor (loss: 8.2693) - memory-efficient
+Fourth: Prodigy (loss: 8.3102) - parameter-free, no LR tuning needed
+Fifth: Muon (loss: 8.3671) - SOTA Dec 2024, SVD-based
+Sixth: RAdam (loss: 8.4416) - rectified Adam
+
+Failed to converge: Sophia, Adan, SF-AdamW, D-Adam (NaN losses)
+
+Model architecture: 4 layers x 256 hidden x 4 heads (~4.2M params)
+Training: 2 epochs, batch size 16, learning rate range 1e-5 to 1e-3
+5 trials per optimizer with Optuna TPE + MedianPruner
