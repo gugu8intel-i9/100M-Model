@@ -128,6 +128,12 @@ class TrainingConfig:
     use_amp: bool = True                    # Automatic mixed precision
     amp_dtype: str = "float16"              # FP16 or bfloat16
     
+    # ===== MULTI-TOKEN PREDICTION (MTP, DeepSeek-V3 style) =====
+    enable_mtp: bool = True                 # Enable MTP modules
+    mtp_depth: int = 2                      # Predict up to +N tokens ahead
+    mtp_layers_per_module: int = 1          # Transformer blocks per MTP module
+    mtp_loss_weight: float = 0.3            # Lambda scaling of MTP aux losses
+    
     # ===== MEMORY OPTIMIZATION =====
     gradient_checkpointing: bool = True     # Save memory at cost of compute
     compile_model: bool = True             # PyTorch 2.0 compile (torch.compile)
@@ -280,6 +286,10 @@ else:
     apply_quantization_numba = None
     generate_positional_embeddings_numba = None
     compute_perplexity_numba = lambda loss: np.exp(loss)
+    # No-op decorators so module still imports/runs without Numba
+    def jit(*args, **kwargs):
+        return lambda f: f
+    prange = range
 
 
 # ============================================================================
@@ -523,6 +533,31 @@ class TransformerBlock(nn.Module):
         return x
 
 
+class MTPModule(nn.Module):
+    """
+    Multi-Token Prediction module (DeepSeek-V3 style).
+
+    Each module lets the model predict one additional token ahead of the
+    trunk head. At position i it fuses the previous module's hidden state
+    h^{k-1}_i with the embedding of an already-known future token
+    t_{i+k}, then runs a transformer block and predicts t_{i+k+1}.
+    Stacking multiple modules shifts each further ahead, improving
+    sample efficiency and boosting inference-time speculative decoding.
+    """
+
+    def __init__(self, config: TrainingConfig):
+        super().__init__()
+        self.norm_in = RMSNorm(config.hidden_dim)     # ln_k on hidden state
+        self.norm_emb = RMSNorm(config.hidden_dim)    # ln'_k on token embedding
+        self.fusion = nn.Linear(2 * config.hidden_dim, config.hidden_dim, bias=False)
+        self.block = TransformerBlock(config)
+        self.norm_out = RMSNorm(config.hidden_dim)
+
+    def forward(self, h: torch.Tensor, tok_emb: torch.Tensor) -> torch.Tensor:
+        fused = self.fusion(torch.cat([self.norm_in(h), self.norm_emb(tok_emb)], dim=-1))
+        return self.norm_out(self.block(fused))
+
+
 class LanguageModel100M(nn.Module):
     """
     ~100M Parameter Transformer Language Model
@@ -554,6 +589,16 @@ class LanguageModel100M(nn.Module):
         
         # Output head
         self.output = nn.Linear(config.hidden_dim, config.vocab_size, bias=False)
+        
+        # Multi-Token Prediction modules (DeepSeek-V3 style)
+        if config.enable_mtp and config.mtp_depth > 0:
+            self.mtp_modules = nn.ModuleList([
+                MTPModule(config) for _ in range(config.mtp_depth)
+            ])
+            self.mtp_head = nn.Linear(config.hidden_dim, config.vocab_size, bias=False)
+        else:
+            self.mtp_modules = None
+            self.mtp_head = None
         
         # Initialize weights
         self.apply(self._init_weights)
@@ -595,6 +640,38 @@ class LanguageModel100M(nn.Module):
                 targets.view(-1),
                 ignore_index=-100
             )
+            
+            # Multi-Token Prediction auxiliary losses
+            if self.mtp_modules is not None:
+                h = x
+                mtp_losses = []
+                for depth, mtp_module in enumerate(self.mtp_modules, start=1):
+                    n = T - depth  # valid positions with a target ahead
+                    if n <= 0:
+                        break
+                    
+                    # Known future token t_{i+depth} (from targets) for embedding lookup
+                    tok = targets[:, depth - 1:depth - 1 + n].contiguous()
+                    # Guard against ignore_index (-100) crashing the embedding lookup
+                    valid = (tok >= 0)
+                    tok_tmp = tok.clamp(min=0)
+                    tok_emb = self.tok_embeddings(tok_tmp)
+                    tok_emb = tok_emb * valid.unsqueeze(-1).to(tok_emb.dtype)
+                    
+                    # Fuse previous hidden state with known next-token embedding
+                    h = mtp_module(h[:, :n], tok_emb)
+                    
+                    # Predict token t_{i+depth+1}
+                    pred = self.mtp_head(h)
+                    tgt = targets[:, depth:depth + n].contiguous()
+                    mtp_losses.append(
+                        F.cross_entropy(pred.view(-1, pred.size(-1)), tgt.view(-1),
+                                        ignore_index=-100)
+                    )
+                
+                if mtp_losses:
+                    aux_loss = sum(mtp_losses) / len(mtp_losses)
+                    loss = loss + self.config.mtp_loss_weight * aux_loss
         
         return logits, loss
     

@@ -57,7 +57,15 @@ This repository contains comprehensive scripts for training and benchmarking 100
   - Authored training scripts with Bayesian-optimized hyperparameters
 
 ## Changelog
-### v3.1 (Current)
+### v3.2 (Current)
+- Added DeepSeek-V3 style **Multi-Token Prediction (MTP)** blocks to `train_100m_llm_numba.py`
+  - `MTPModule`: fuses trunk hidden states with next-token embeddings, runs a transformer block, predicts one additional token ahead
+  - Stacked `mtp_depth` modules predict up to +N tokens ahead for boosted sample efficiency / speculative decoding
+  - MTP auxiliary losses weighted by `mtp_loss_weight` (default λ=0.3), with `ignore_index` (-100) safety
+  - New config: `enable_mtp`, `mtp_depth`, `mtp_layers_per_module`, `mtp_loss_weight`
+- Fixed import crash when Numba is unavailable (no-op `jit`/`prange` fallbacks)
+
+### v3.1
 - Fast benchmark with 5 trials per optimizer
 - Added Lion, Sophia, Adan, RAdam, Muon, Prodigy, SF-AdamW, D-Adam
 - Bayesian-optimized hyperparameters (LR=1.75e-4, WD=0.149, AdamW)
@@ -82,4 +90,10 @@ python scripts/llm_fast_benchmark_v31.py
 
 # Train with specific optimizer
 python scripts/llm_100m_gpu_numba_qat.py --optimizer lion --lr 1.75e-4 --wd 0.149
+
+# Train with Multi-Token Prediction (MTP)
+python scripts/train_100m_llm_numba.py --mode train
+
+# MTP config (in train_100m_llm_numba.py TrainingConfig)
+#   enable_mtp=True  mtp_depth=2  mtp_loss_weight=0.3
 ```
