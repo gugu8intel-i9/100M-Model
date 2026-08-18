@@ -138,7 +138,7 @@ def generate_with_cot(prompt):
     - OpenWebText
     - Math‑specific datasets (e.g., arXiv, StackExchange)
   - Tokens: ~100B (ongoing)
-  - Optimizer: AdamW with ternary‑aware gradient clipping
+  - Optimizer: Lion with ternary‑aware gradient clipping
 - **CoT Fine‑Tuning** (planned):
   - Dataset: 5M examples from GSM8K, MATH, and synthetic reasoning tasks
   - Duration: ~2 days on same TPU cluster
