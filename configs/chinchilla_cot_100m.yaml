@@ -1,0 +1,78 @@
+# 100M Chinchilla-optimal, reasoning-capable LM
+# 100M parameters => approximately 2.0B training tokens under Chinchilla's ~20 tokens/parameter rule.
+# This is a target token budget, not a claim that the full listed corpora should be consumed.
+
+run_name: chinchilla-cot-100m
+seed: 42
+output_dir: outputs/chinchilla-cot-100m
+resume_from: null
+
+tokenizer:
+  # Train a 32k BPE vocabulary first; runtime encoding is then performed by
+  # Gigatoken's Hugging Face-compatible Rust backend (same token IDs).
+  # python scripts/train_chinchilla_cot.py --stage tokenizer
+  backend: gigatoken
+  path: tokenizer/chinchilla-32k
+  vocab_size: 32000
+
+model:
+  vocab_size: 32000
+  d_model: 640
+  n_layers: 16
+  n_heads: 10
+  n_kv_heads: 10
+  # SwiGLU has three projections; 1728 gives ~99.8M parameters with tied embeddings.
+  intermediate_size: 1728
+  max_seq_len: 1024
+  rope_theta: 10000.0
+  dropout: 0.0
+  tie_embeddings: true
+
+training:
+  # 2,000,000,000 / 1024 tokens per sequence = 1,953,125 sequences
+  # Global batch 512 sequences -> 3,815 optimizer updates.
+  target_tokens: 2000000000
+  seq_len: 1024
+  micro_batch_size: 4
+  grad_accumulation_steps: 32
+  # global batch = micro_batch_size * grad_accumulation_steps * world_size.
+  # Set grad_accumulation_steps=4 if training on 8 GPUs (global batch remains 128; adjust to 16 for 512).
+  learning_rate: 0.0006
+  min_lr_ratio: 0.1
+  warmup_tokens: 40000000
+  weight_decay: 0.1
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip_norm: 1.0
+  bf16: true
+  tf32: true
+  activation_checkpointing: true
+  log_every: 10
+  eval_every: 250
+  save_every: 250
+  eval_batches: 50
+
+# Token-level mixture for the 2B-token base pretraining stage. Weights sum to 1.
+# FineWeb is streamed and sampled; never attempt to download all 1.53B documents.
+pretrain_mixture:
+  - {name: fineweb_edu, dataset: HuggingFaceFW/fineweb-edu, subset: sample-10BT, split: train, text_fields: [text], weight: 0.85, max_tokens: 1700000000}
+  - {name: english_mini, dataset: Gugu8/English-Mini, split: train, text_fields: [instruction, input_text, output_text], weight: 0.08, max_tokens: 160000000}
+  - {name: math, dataset: Gugu8/Math-Dataset, split: train, text_fields: [question, reasoning, answer], weight: 0.07, max_tokens: 140000000}
+
+# SFT continues FROM the base checkpoint and is not counted in the pretraining Chinchilla budget.
+# It teaches useful visible explanations, but does not require the model to reveal private chain-of-thought.
+sft:
+  target_tokens: 120000000
+  learning_rate: 0.00012
+  warmup_tokens: 3000000
+  # Per-source caps prevent the 954k-row distillation set from drowning out verified math/English examples.
+  mixture:
+    - {name: math_rationales, dataset: Gugu8/Math-Dataset, split: train, format: math_sft, weight: 0.45, max_tokens: 54000000}
+    - {name: english_instruction, dataset: Gugu8/English-Mini, split: train, format: english_sft, weight: 0.25, max_tokens: 30000000}
+    - {name: distilled_responses, dataset: r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation, subset: sft_balanced, split: train, format: messages_sft, weight: 0.30, max_tokens: 36000000, require_verifier_passed: true}
+
+# Explicit review gate. Set true only after confirming each dataset card's license, provenance, and allowed use.
+data_governance:
+  accept_dataset_terms: false
+  redact_personal_data: true
+  audit_samples_per_source: 200

@@ -1,0 +1,10 @@
+# Training dependencies (install in a GPU environment)
+torch>=2.3
+transformers>=4.45
+datasets>=3.0
+accelerate>=1.0
+tokenizers>=0.20
+gigatoken>=0.10.0
+pyyaml>=6.0
+tqdm>=4.66
+# Optional: wandb>=0.18

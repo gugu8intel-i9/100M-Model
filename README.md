@@ -100,3 +100,59 @@ python scripts/train_100m_llm_numba.py --mode train
 # Train DFlash-style block-diffusion drafter + speculative generate
 python scripts/dflash_drafter.py --train-steps 20 --max-new-tokens 64
 ```
+
+## Chinchilla-optimal 100M reasoning training
+
+`train_100m_llm_numba.py` remains the original experimental script. For a
+reproducible real-data run, use `scripts/train_chinchilla_cot.py` with
+`configs/chinchilla_cot_100m.yaml`. It replaces synthetic data with streamed
+Hugging Face datasets, uses **Gigatoken** for training-data encoding, and uses
+a tied-embedding 16 × 640 model with 10 heads and a SwiGLU width of 1728
+(**~99.8M trainable parameters**).
+
+The tokenizer stage trains the project-specific 32k BPE vocabulary. Pretraining
+and SFT then wrap that exact vocabulary with Gigatoken's Hugging Face-compatible
+Rust backend, so the model's token IDs and 100M parameter budget stay stable
+while data ingestion uses Gigatoken.
+
+The Chinchilla target for this model is **2.0B base-pretraining tokens**
+(about 20 tokens per parameter), rather than an arbitrary number of epochs.
+FineWeb-Edu is therefore streamed and capped at 1.7B selected tokens; the
+English and Math data make up the remaining 300M tokens. This is followed by
+a separate 120M-token SFT stage, so instruction/rationale tuning does not
+replace the compute-optimal broad pretraining budget.
+
+### Before running
+
+1. Create a GPU environment and install `pip install -r requirements-train.txt`.
+2. Review the licences, provenance, and permitted uses on every selected
+   dataset card. In particular, inspect the provenance/terms of the
+   distillation mixture; it includes multiple upstream sources.
+3. Set `data_governance.accept_dataset_terms: true` in the config only after
+   that review. The trainer intentionally refuses ingestion until then.
+4. Train a tokenizer, then the base model, then run SFT from the base
+   checkpoint:
+
+```bash
+python scripts/train_chinchilla_cot.py --stage tokenizer
+python scripts/train_chinchilla_cot.py --stage pretrain
+# set resume_from: outputs/chinchilla-cot-100m/pretrain-final.pt in the YAML
+python scripts/train_chinchilla_cot.py --stage sft
+```
+
+The SFT loader masks prompts and learns assistant responses only. Math
+examples retain their short, checkable rationales. For the distillation data,
+it filters to verifier-passed, no-tool examples and removes `<think>` wrappers,
+so the model can learn to reason and give useful concise explanations without
+being forced to emit a hidden-chain-of-thought format at inference.
+
+### Training notes
+
+- The configured global batch is 128 sequences per GPU process (4 × 32); set
+  accumulation relative to GPU count to obtain the desired global batch.
+- The script saves resumable model states, but an external job launcher
+  (e.g. `torchrun`/Accelerate) should be used for multi-GPU production runs.
+- A 2B-token run is substantial. Validate the data mixture with a short
+  smoke run, monitor held-out loss and math accuracy, and revise caps/quality
+  filters before spending the full budget.
+>>>>>>> e055270 (Add Gigatoken Chinchilla reasoning training pipeline)

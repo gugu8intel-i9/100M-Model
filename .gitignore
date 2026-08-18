@@ -2,4 +2,10 @@ __pycache__/
 *.pyc
 training_log.log
 checkpoints/
+*.pt# Training artefacts
+outputs/
+checkpoints/
+tokenizer/
 *.pt
+*.safetensors
+training_log.log
