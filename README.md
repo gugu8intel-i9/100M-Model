@@ -57,12 +57,15 @@ This repository contains comprehensive scripts for training and benchmarking 100
   - Authored training scripts with Bayesian-optimized hyperparameters
 
 ## Changelog
-### v3.2 (Current)
-- Added DeepSeek-V3 style **Multi-Token Prediction (MTP)** blocks to `train_100m_llm_numba.py`
-  - `MTPModule`: fuses trunk hidden states with next-token embeddings, runs a transformer block, predicts one additional token ahead
-  - Stacked `mtp_depth` modules predict up to +N tokens ahead for boosted sample efficiency / speculative decoding
-  - MTP auxiliary losses weighted by `mtp_loss_weight` (default λ=0.3), with `ignore_index` (-100) safety
-  - New config: `enable_mtp`, `mtp_depth`, `mtp_layers_per_module`, `mtp_loss_weight`
+### v3.3 (Current)
+- **Dropped** the DeepSeek-V3 MTP blocks
+- Added **DFlash-style block-diffusion drafter** (`scripts/dflash_drafter.py`, after arXiv 2602.06036)
+  - KV-injection attention: fused target-context features injected into K/V of every drafter layer
+  - Block-diffusion training: random anchor seeds each block; masked positions predicted in parallel; bidirectional attention inside a block only (no cross-block leakage)
+  - `spec_generate()`: custom speculative-decoding loop — draft block, verify with target, accept longest prefix + bonus token
+  - Drafter shares the frozen target's token embedding + LM head (stays small); adds `extract_hidden_states()` to the target for fused context
+
+### v3.2
 - Fixed import crash when Numba is unavailable (no-op `jit`/`prange` fallbacks)
 
 ### v3.1
@@ -91,9 +94,9 @@ python scripts/llm_fast_benchmark_v31.py
 # Train with specific optimizer
 python scripts/llm_100m_gpu_numba_qat.py --optimizer lion --lr 1.75e-4 --wd 0.149
 
-# Train with Multi-Token Prediction (MTP)
+# Train target model (no MTP - plain transformer + QAT)
 python scripts/train_100m_llm_numba.py --mode train
 
-# MTP config (in train_100m_llm_numba.py TrainingConfig)
-#   enable_mtp=True  mtp_depth=2  mtp_loss_weight=0.3
+# Train DFlash-style block-diffusion drafter + speculative generate
+python scripts/dflash_drafter.py --train-steps 20 --max-new-tokens 64
 ```

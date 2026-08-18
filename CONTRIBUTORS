@@ -10,6 +10,9 @@ Contribution: LLM 100M parameter optimizer benchmark and training scripts
 - Authored training scripts with Bayesian-optimized hyperparameters (LR=1.75e-4, WD=0.149, AdamW)
 - Implemented custom optimizers: Lion, Sophia, Adan, RAdam, and QAT-aware layers
 - Deployed training on Modal cloud GPU infrastructure (NVIDIA A10G)
+- Designed and implemented the DFlash-style block-diffusion drafter (scripts/dflash_drafter.py):
+  KV-injection attention, block-diffusion training, and custom speculative-decoding
+  generation loop for the 100M target (after arXiv 2602.06036)
 
 Results Summary
 ---------------
