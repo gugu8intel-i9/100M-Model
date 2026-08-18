@@ -138,7 +138,7 @@ def generate_with_cot(prompt):
     - OpenWebText
     - Math‑specific datasets (e.g., arXiv, StackExchange)
   - Tokens: ~100B (ongoing)
-  - Optimizer: Lion with ternary‑aware gradient clipping
+  - Optimizer: AdamW with ternary‑aware gradient clipping
 - **CoT Fine‑Tuning** (planned):
   - Dataset: 5M examples from GSM8K, MATH, and synthetic reasoning tasks
   - Duration: ~2 days on same TPU cluster
@@ -154,6 +154,15 @@ def generate_with_cot(prompt):
 
 ---
 
+## Contributors
+
+| Contributor | Role |
+|---|---|
+| [gugu8intel-i9](https://huggingface.co/gugu8intel-i9) | Tern-1 architecture, ternary quantization, base training pipeline |
+| [0xKunalsharma](https://huggingface.co/0xKunalsharma) | Hybrid attention architecture (Full Attention, Linear Attention, Mamba-3 SSD), training pipeline integration, benchmarking |
+
+---
+
 ## Citation
 
 If you use Tern-1 in your research, please cite:
@@ -161,7 +170,7 @@ If you use Tern-1 in your research, please cite:
 ```bibtex
 @misc{tern1-2026,
   title = {Tern-1: A Ternary 100M Language Model with Chain-of-Thought Reasoning},
-  author = {gugu8intel-i9},
+  author = {gugu8intel-i9 and 0xKunalsharma},
   year = {2026},
   publisher = {GitHub},
   url = {https://github.com/gugu8intel-i9/tern-1}
